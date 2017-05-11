@@ -15,11 +15,8 @@ class ArticleTypeBTableViewCell: UITableViewCell {
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelArticleTime: UILabel!
     
-    let IMAGE_VIEW_FOOD_CORNER = CGFloat(2)
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.imageViewFood.layer.cornerRadius = IMAGE_VIEW_FOOD_CORNER
         // Initialization code
     }
     

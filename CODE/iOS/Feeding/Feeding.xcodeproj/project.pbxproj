@@ -15,6 +15,7 @@
 		0684D8801EC03D13000E204E /* AuthorInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684D87F1EC03D13000E204E /* AuthorInfoModel.swift */; };
 		069494571EC0BE43002814EC /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069494561EC0BE43002814EC /* ArticleViewController.swift */; };
 		069494591EC0BE60002814EC /* ArticleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069494581EC0BE60002814EC /* ArticleViewController.storyboard */; };
+		0694945B1EC3689C002814EC /* UIView+XIBEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0694945A1EC3689C002814EC /* UIView+XIBEdit.swift */; };
 		06A593481EBA36410048A98D /* WishListMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A593471EBA36410048A98D /* WishListMapViewController.storyboard */; };
 		06F09B3A1EBB0804002FD77C /* CONST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F09B391EBB0804002FD77C /* CONST.swift */; };
 		06F09B421EBB141C002FD77C /* ArticleListCellAuthorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F09B411EBB141C002FD77C /* ArticleListCellAuthorView.xib */; };
@@ -48,6 +49,7 @@
 		0684D87F1EC03D13000E204E /* AuthorInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorInfoModel.swift; sourceTree = "<group>"; };
 		069494561EC0BE43002814EC /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		069494581EC0BE60002814EC /* ArticleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArticleViewController.storyboard; sourceTree = "<group>"; };
+		0694945A1EC3689C002814EC /* UIView+XIBEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XIBEdit.swift"; sourceTree = "<group>"; };
 		06A593471EBA36410048A98D /* WishListMapViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WishListMapViewController.storyboard; sourceTree = "<group>"; };
 		06F09B391EBB0804002FD77C /* CONST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CONST.swift; sourceTree = "<group>"; };
 		06F09B411EBB141C002FD77C /* ArticleListCellAuthorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleListCellAuthorView.xib; sourceTree = "<group>"; };
@@ -193,10 +195,11 @@
 		06F6EA4F1EBA2F5100278594 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				06F6EA481EBA2E8700278594 /* Info.plist */,
 				06F6EA3C1EBA2E8700278594 /* AppDelegate.swift */,
-				06F6EA431EBA2E8700278594 /* Assets.xcassets */,
 				06F09B391EBB0804002FD77C /* CONST.swift */,
+				06F6EA481EBA2E8700278594 /* Info.plist */,
+				06F6EA431EBA2E8700278594 /* Assets.xcassets */,
+				0694945A1EC3689C002814EC /* UIView+XIBEdit.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				06F6EA741EBA327900278594 /* MineTableViewController.swift in Sources */,
 				06F6EA571EBA308600278594 /* WishNavigationController.swift in Sources */,
 				06F09B441EBB15D4002FD77C /* ArticleListCellAuthorView.swift in Sources */,
+				0694945B1EC3689C002814EC /* UIView+XIBEdit.swift in Sources */,
 				06F6EA531EBA2FDA00278594 /* MainTabBarController.swift in Sources */,
 				0684D87E1EC03971000E204E /* ArticleListModel.swift in Sources */,
 				06F6EA3D1EBA2E8700278594 /* AppDelegate.swift in Sources */,

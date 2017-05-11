@@ -54,7 +54,6 @@ func CELL_HIGHLIGHT(cell : UITableViewCell){
 	view.tag = TAG_CELL_HIGHLIGHT_VIEW
 	cell.contentView.addSubview(view)
 	UIView.animate(withDuration: 0.2, animations: {view.backgroundColor = RGBA(r: 100, g: 100, b: 100, a: 0.1)}, completion: {(value: Bool) in })
-	
 }
 
 func CELL_UNHIGHLIGHT(cell : UITableViewCell){
