@@ -11,8 +11,9 @@ import Foundation
 class ArticleListModel: NSObject {
     var articleType: String = CELL_ARTICLE_LIST_TYPE_A
     var imageList: Array<String> = []
-    var title: String = EMPTY_STRING
+    var title: String = STRING_EMPTY
     var authorInfo: AuthorInfoModel = AuthorInfoModel()
+    var targeted = false
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
     

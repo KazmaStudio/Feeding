@@ -9,8 +9,8 @@
 import Foundation
 
 class AuthorInfoModel: NSObject {
-    var authorName: String = EMPTY_STRING
-    var authorAvatar: String = EMPTY_STRING
+    var authorName: String = STRING_EMPTY
+    var authorAvatar: String = STRING_EMPTY
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         

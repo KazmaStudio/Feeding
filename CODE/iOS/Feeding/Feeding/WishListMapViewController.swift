@@ -7,19 +7,16 @@
 //
 
 import UIKit
-import MapKit
 
-class WishListMapViewController: UIViewController, MKMapViewDelegate {
-
-	@IBOutlet var mapView: MKMapView!
+class WishListMapViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		mapView.delegate = self
-		let overlayPath = "https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
-		let overlay = MKTileOverlay(urlTemplate: overlayPath)
-		overlay.canReplaceMapContent = true
-		self.mapView.add(overlay)
+		
+//		let overlayPath = "https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
+//		let overlay = MKTileOverlay(urlTemplate: overlayPath)
+//		overlay.canReplaceMapContent = true
+//		self.mapView.add(overlay)
         // Do any additional setup after loading the view.
     }
 
@@ -28,13 +25,13 @@ class WishListMapViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 	
-	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-		
-		guard let tileOverlay = overlay as? MKTileOverlay else {
-			return MKOverlayRenderer(overlay: overlay)
-		}
-		return MKTileOverlayRenderer(tileOverlay: tileOverlay)
-	}
+//	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//		
+//		guard let tileOverlay = overlay as? MKTileOverlay else {
+//			return MKOverlayRenderer(overlay: overlay)
+//		}
+//		return MKTileOverlayRenderer(tileOverlay: tileOverlay)
+//	}
 	
 
     /*

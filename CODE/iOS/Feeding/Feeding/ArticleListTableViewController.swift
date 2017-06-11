@@ -26,12 +26,6 @@ class ArticleListTableViewController: UITableViewController {
         self.tableView.register(cellTypeCNib, forCellReuseIdentifier: CELL_ARTICLE_LIST_TYPE_C)
         
         CELL_TYPE_C_HEIGHT = ((((SCREEN_WIDTH - 32) / 3) * 3) / 4) + 100
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +37,7 @@ class ArticleListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return INT_1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +52,7 @@ class ArticleListTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ARTICLE_LIST_TYPE_A, for: indexPath) as! ArticleTypeATableViewCell
             cell.selectionStyle = .none
             cell.articleListCellAuthorView.imageViewAuthorAvater.image = UIImage.init(named: IMG_NAME_AVATAR_DEFAULT_GIRL)
-            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].authorInfo.authorAvatar)
+            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].targeted ? IMG_NAME_TARGET_COLOR : STRING_EMPTY)
             cell.articleListCellAuthorView.labelAuthorName.text = articleList[indexPath.row].authorInfo.authorName
             cell.imageViewFood.image = UIImage.init(named: articleList[indexPath.row].imageList[0])
             cell.labelTitle.text = articleList[indexPath.row].title
@@ -67,7 +61,7 @@ class ArticleListTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ARTICLE_LIST_TYPE_B, for: indexPath) as! ArticleTypeBTableViewCell
             cell.selectionStyle = .none
             cell.articleListCellAuthorView.imageViewAuthorAvater.image = UIImage.init(named: IMG_NAME_AVATAR_DEFAULT_GIRL)
-            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].authorInfo.authorAvatar)
+            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].targeted ? IMG_NAME_TARGET_COLOR : STRING_EMPTY)
             cell.articleListCellAuthorView.labelAuthorName.text = articleList[indexPath.row].authorInfo.authorName
             cell.imageViewFood.image = UIImage.init(named: articleList[indexPath.row].imageList[0])
             cell.labelTitle.text = articleList[indexPath.row].title
@@ -76,7 +70,7 @@ class ArticleListTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ARTICLE_LIST_TYPE_C, for: indexPath) as! ArticleTypeCTableViewCell
             cell.selectionStyle = .none
             cell.articleListCellAuthorView.imageViewAuthorAvater.image = UIImage.init(named: IMG_NAME_AVATAR_DEFAULT_GIRL)
-            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].authorInfo.authorAvatar)
+            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].targeted ? IMG_NAME_TARGET_COLOR : STRING_EMPTY)
             cell.articleListCellAuthorView.labelAuthorName.text = articleList[indexPath.row].authorInfo.authorName
             cell.imageViewFoodLeft.image = UIImage.init(named: articleList[indexPath.row].imageList[0])
             cell.imageViewFoodCenter.image = UIImage.init(named: articleList[indexPath.row].imageList[1])
@@ -87,7 +81,7 @@ class ArticleListTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ARTICLE_LIST_TYPE_A, for: indexPath) as! ArticleTypeATableViewCell
             cell.selectionStyle = .none
             cell.articleListCellAuthorView.imageViewAuthorAvater.image = UIImage.init(named: IMG_NAME_AVATAR_DEFAULT_GIRL)
-            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].authorInfo.authorAvatar)
+            cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: articleList[indexPath.row].targeted ? IMG_NAME_TARGET_COLOR : STRING_EMPTY)
             cell.articleListCellAuthorView.labelAuthorName.text = articleList[indexPath.row].authorInfo.authorName
             cell.imageViewFood.image = UIImage.init(named: articleList[indexPath.row].imageList[0])
             cell.labelTitle.text = articleList[indexPath.row].title
@@ -132,6 +126,7 @@ class ArticleListTableViewController: UITableViewController {
         article1.imageList = [IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER]
         article1.authorInfo.authorName = "NewAuthor"
         article1.articleType = CELL_ARTICLE_LIST_TYPE_C
+        article1.targeted = false
         articleList.append(article1)
 
         let article5: ArticleListModel = ArticleListModel()
@@ -139,14 +134,15 @@ class ArticleListTableViewController: UITableViewController {
         article5.imageList = [IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER]
         article5.authorInfo.authorName = "NewAuthor"
         article5.articleType = CELL_ARTICLE_LIST_TYPE_C
+        article5.targeted = true
         articleList.append(article5)
         
         let article2: ArticleListModel = ArticleListModel()
         article2.title = "New Title Here"
         article2.imageList = [IMG_NAME_PLACEHOLDER]
-        article2.authorInfo.authorAvatar = IMG_NAME_RECORD
         article2.authorInfo.authorName = "NewAuthor"
         article2.articleType = CELL_ARTICLE_LIST_TYPE_A
+        article2.targeted = false
         articleList.append(article2)
         
         let article4: ArticleListModel = ArticleListModel()
@@ -154,62 +150,15 @@ class ArticleListTableViewController: UITableViewController {
         article4.imageList = [IMG_NAME_PLACEHOLDER]
         article4.authorInfo.authorName = "NewAuthor"
         article4.articleType = CELL_ARTICLE_LIST_TYPE_B
+        article4.targeted = false
         articleList.append(article4)
         
         let article3: ArticleListModel = ArticleListModel()
         article3.title = "New Title Here, It's a Long Title, Wrap Please. Wrap Wrap Wrap. More Lines, Maybe three Line. Other Line, Good Title"
+        article3.targeted = false
         article3.imageList = [IMG_NAME_PLACEHOLDER]
         article3.authorInfo.authorName = "NewAuthor"
         article3.articleType = CELL_ARTICLE_LIST_TYPE_A
         articleList.append(article3)
-
     }
-    
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 }
