@@ -1,20 +1,21 @@
 //
-//  WishNavigationController.swift
+//  TargetNavigationController.swift
 //  Feeding
 //
-//  Created by ZHAOCHENJUN on 2017/5/3.
+//  Created by zhaochenjun on 2017/6/12.
 //  Copyright © 2017年 com.kazmastudio. All rights reserved.
 //
 
 import UIKit
 
-class WishNavigationController: UINavigationController {
+class TargetNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		let storyBoard = UIStoryboard.init(name: VC_NAME_WISH_LIST_MAP, bundle: nil)
-		let viewController = storyBoard.instantiateViewController(withIdentifier: VC_NAME_WISH_LIST_MAP)
-		self.pushViewController(viewController, animated: false)
+        super.viewDidLoad()
+        let storyBoard = UIStoryboard.init(name: VC_NAME_TARGET_LIST_TABLE, bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: VC_NAME_TARGET_LIST_TABLE)
+        self.pushViewController(viewController, animated: false)
         // Do any additional setup after loading the view.
     }
 

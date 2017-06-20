@@ -9,9 +9,10 @@
 import UIKit
 import WebKit
 
-class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigationDelegate {
+class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigationDelegate, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Outlet
+    @IBOutlet weak var tableViewComment: UITableView!
     @IBOutlet weak var layoutConstraintViewTitleTop: NSLayoutConstraint!
     @IBOutlet weak var avTargetOperate: UIActivityIndicatorView!
     @IBOutlet weak var progressWebView: UIProgressView!
@@ -41,6 +42,9 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigatio
     let AUTHOR_TOP = CGFloat(INT_96)
     let AUTHOR_TOP_DELTA = CGFloat(INT_40)
     
+    var CELL_TYPE_C_HEIGHT = CGFloat(0)
+    var commentList: Array<ArticleListModel> = []
+    
     // MARK: UIView delegate
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +54,19 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigatio
         webViewMain.scrollView.backgroundColor = UIColor.clear
         webViewMain.addObserver(self, forKeyPath: OBSERVE_KEY_ESTIMATED_PROGRESS, options: .new, context: nil)
         
+        tableViewComment.delegate = self
+        tableViewComment.dataSource = self
+        let cellTypeANib = UINib(nibName: CELL_ARTICLE_LIST_TYPE_C, bundle: nil)
+        tableViewComment.register(cellTypeANib, forCellReuseIdentifier: CELL_ARTICLE_LIST_TYPE_C)
+        fakeData()
+        
+        tableViewComment.register(UINib(nibName: "AddCommentHeader", bundle:nil),
+                           forCellReuseIdentifier: "header")
+        tableViewComment.contentInset = UIEdgeInsets.init(top: CGFloat(INT_0), left: CGFloat(INT_0), bottom: layoutConstraintVisualViewBottomHeight.constant, right: CGFloat(INT_0))
+        CELL_TYPE_C_HEIGHT = ((((SCREEN_WIDTH - 32) / 3) * 3) / 4) + 100
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,7 +124,87 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigatio
         }, completion: {finished in
             
         })
-
+        
+    }
+    
+    // MARK: Scroll View delegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if(scrollView.superview == webViewMain){
+            let targetViewTopHeight = VISUAL_EFFECT_VIEW_TOP_HEIGHT - scrollView.contentOffset.y - 64
+            if(targetViewTopHeight < VIEW_TOP_MIN_HEIGHT){
+                viewTopHeight.constant = VIEW_TOP_MIN_HEIGHT
+                labelTitle.font = UIFont.boldSystemFont(ofSize: LABEL_TITLE_MIN_FONT_SIZE)
+                layoutConstraintLabelAuthorTop.constant = AUTHOR_TOP
+            }else{
+                viewTopHeight.constant = targetViewTopHeight
+                let targetLabelTitleFontSize = (LABEL_TITLE_MAX_FONT_SIZE - (VISUAL_EFFECT_VIEW_TOP_HEIGHT - viewTopHeight.constant))
+                if (targetLabelTitleFontSize <= LABEL_TITLE_MIN_FONT_SIZE){
+                    labelTitle.font = UIFont.boldSystemFont(ofSize: LABEL_TITLE_MIN_FONT_SIZE)
+                }else if (targetLabelTitleFontSize > LABEL_TITLE_MAX_FONT_SIZE){
+                    labelTitle.font = UIFont.boldSystemFont(ofSize: LABEL_TITLE_MAX_FONT_SIZE)
+                }else{
+                    labelTitle.font = UIFont.boldSystemFont(ofSize: targetLabelTitleFontSize)
+                }
+                if (targetViewTopHeight > (AUTHOR_TOP_DELTA + AUTHOR_TOP)){
+                    layoutConstraintLabelAuthorTop.constant = targetViewTopHeight - AUTHOR_TOP_DELTA
+                }else{
+                    layoutConstraintLabelAuthorTop.constant = AUTHOR_TOP
+                }
+            }
+            self.webViewMain.scrollView.scrollIndicatorInsets = UIEdgeInsets.init(top: viewTopHeight.constant, left: CGFloat(INT_0), bottom: layoutConstraintVisualViewBottomHeight.constant, right: CGFloat(INT_0))
+        }
+    }
+    
+    // MARK: - Table view data source
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return INT_1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return commentList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ARTICLE_LIST_TYPE_C, for: indexPath) as! ArticleTypeCTableViewCell
+        cell.selectionStyle = .none
+        cell.articleListCellAuthorView.imageViewAuthorAvater.image = UIImage.init(named: IMG_NAME_AVATAR_DEFAULT_GIRL)
+        cell.articleListCellAuthorView.imageViewTag.image = UIImage.init(named: commentList[indexPath.row].targeted ? IMG_NAME_TARGET_COLOR : STRING_EMPTY)
+        cell.articleListCellAuthorView.labelAuthorName.text = commentList[indexPath.row].authorInfo.authorName
+        cell.imageViewFoodLeft.image = UIImage.init(named: commentList[indexPath.row].imageList[0])
+        cell.imageViewFoodCenter.image = UIImage.init(named: commentList[indexPath.row].imageList[1])
+        cell.imageViewFoodRight.image = UIImage.init(named: commentList[indexPath.row].imageList[2])
+        cell.labelTitle.text = commentList[indexPath.row].title
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CELL_TYPE_C_HEIGHT
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        let cell = tableView.cellForRow(at: indexPath)
+        CELL_HIGHLIGHT(cell: cell!)
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        CELL_UNHIGHLIGHT(cell: cell!)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return tableView.dequeueReusableCell(withIdentifier: "header")
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
     }
     
     // MARK: IBAction
@@ -124,7 +218,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigatio
             sender.setImage(UIImage.init(named: IMG_NAME_CHAT), for: .normal)
             layoutConstraintViewWebTop.constant = CGFloat(INT_0)
             layoutConstraintViewTitleTop.constant = CGFloat(INT_0)
-            UIView.animate(withDuration: 0.6, delay: TimeInterval(INT_0), options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: TimeInterval(INT_0), options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             }, completion: {finished in
             })
@@ -133,7 +227,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigatio
             sender.setImage(UIImage.init(named: IMG_NAME_ARTICLE), for: .normal)
             layoutConstraintViewWebTop.constant = -SCREEN_HEIGHT
             layoutConstraintViewTitleTop.constant = -viewTitle.frame.size.height
-            UIView.animate(withDuration: 0.6, delay: TimeInterval(INT_0), options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: TimeInterval(INT_0), options: .curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             }, completion: {finished in
             })
@@ -166,39 +260,41 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate, WKNavigatio
     }
     
     // MARK: Function
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let targetViewTopHeight = VISUAL_EFFECT_VIEW_TOP_HEIGHT - scrollView.contentOffset.y - 64
-        if(targetViewTopHeight < VIEW_TOP_MIN_HEIGHT){
-            viewTopHeight.constant = VIEW_TOP_MIN_HEIGHT
-            labelTitle.font = UIFont.boldSystemFont(ofSize: LABEL_TITLE_MIN_FONT_SIZE)
-            layoutConstraintLabelAuthorTop.constant = AUTHOR_TOP
-        }else{
-            viewTopHeight.constant = targetViewTopHeight
-            let targetLabelTitleFontSize = (LABEL_TITLE_MAX_FONT_SIZE - (VISUAL_EFFECT_VIEW_TOP_HEIGHT - viewTopHeight.constant))
-            if (targetLabelTitleFontSize <= LABEL_TITLE_MIN_FONT_SIZE){
-                labelTitle.font = UIFont.boldSystemFont(ofSize: LABEL_TITLE_MIN_FONT_SIZE)
-            }else if (targetLabelTitleFontSize > LABEL_TITLE_MAX_FONT_SIZE){
-                labelTitle.font = UIFont.boldSystemFont(ofSize: LABEL_TITLE_MAX_FONT_SIZE)
-            }else{
-                labelTitle.font = UIFont.boldSystemFont(ofSize: targetLabelTitleFontSize)
-            }
-            if (targetViewTopHeight > (AUTHOR_TOP_DELTA + AUTHOR_TOP)){
-                layoutConstraintLabelAuthorTop.constant = targetViewTopHeight - AUTHOR_TOP_DELTA
-            }else{
-                layoutConstraintLabelAuthorTop.constant = AUTHOR_TOP
-            }
-        }
-        self.webViewMain.scrollView.scrollIndicatorInsets = UIEdgeInsets.init(top: viewTopHeight.constant, left: CGFloat(INT_0), bottom: layoutConstraintVisualViewBottomHeight.constant, right: CGFloat(INT_0))
+    func fakeData(){
+        
+        let article2: ArticleListModel = ArticleListModel()
+        article2.title = "New Title Here"
+        article2.imageList = [IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER]
+        article2.authorInfo.authorName = "NewAuthor"
+        article2.articleType = CELL_ARTICLE_LIST_TYPE_A
+        article2.targeted = false
+        commentList.append(article2)
+        
+        let article3: ArticleListModel = ArticleListModel()
+        article3.title = "New Title Here, It's a Long Title, Wrap Please. Wrap Wrap Wrap. More Lines, Maybe three Line. Other Line, Good Title"
+        article3.targeted = false
+        article3.imageList = [IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER]
+        article3.authorInfo.authorName = "NewAuthor"
+        article3.articleType = CELL_ARTICLE_LIST_TYPE_A
+        commentList.append(article3)
+        commentList.append(article2)
+        commentList.append(article3)
+        commentList.append(article2)
+        commentList.append(article2)
+        commentList.append(article2)
+        commentList.append(article3)
+        
+        tableViewComment.reloadData()
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

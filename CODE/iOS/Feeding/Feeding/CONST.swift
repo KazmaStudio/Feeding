@@ -32,7 +32,7 @@ let INT_96 = 96
 // MARK: View controller name
 let VC_NAME_ARTICLE_LITS_TABLE = "ArticleListTableViewController"
 let VC_NAME_ARTICLE = "ArticleViewController"
-let VC_NAME_WISH_LIST_MAP = "WishListMapViewController"
+let VC_NAME_TARGET_LIST_TABLE = "TargetListTableViewController"
 
 // MARK: Cell name
 let CELL_ARTICLE_LIST_TYPE_A = "ArticleTypeATableViewCell"

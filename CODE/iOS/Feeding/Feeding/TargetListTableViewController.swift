@@ -1,20 +1,20 @@
 //
-//  ArticleListTableViewController.swift
+//  TargetListTableViewController.swift
 //  Feeding
 //
-//  Created by ZHAOCHENJUN on 2017/5/3.
+//  Created by zhaochenjun on 2017/6/12.
 //  Copyright © 2017年 com.kazmastudio. All rights reserved.
 //
 
 import UIKit
 
-class ArticleListTableViewController: UITableViewController {
-	
-	let CELL_TYPE_A_HEIGHT = CGFloat(108)
+class TargetListTableViewController: UITableViewController {
+
+    let CELL_TYPE_A_HEIGHT = CGFloat(108)
     let CELL_TYPE_B_HEIGHT = CGFloat(256)
-    var CELL_TYPE_C_HEIGHT = CGFloat(0)
+    var CELL_TYPE_C_HEIGHT = CGFloat(168)
     var articleList: Array<ArticleListModel> = []
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fakeData()
@@ -27,24 +27,24 @@ class ArticleListTableViewController: UITableViewController {
         
         CELL_TYPE_C_HEIGHT = ((((SCREEN_WIDTH - 32) / 3) * 3) / 4) + 100
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return INT_1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return articleList.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch articleList[indexPath.row].articleType {
@@ -108,32 +108,32 @@ class ArticleListTableViewController: UITableViewController {
         let viewController = storyBoard.instantiateViewController(withIdentifier: VC_NAME_ARTICLE)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-	
-	override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		let cell = tableView.cellForRow(at: indexPath)
-		CELL_HIGHLIGHT(cell: cell!)
-		return true
-	}
-	
-	override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-		let cell = tableView.cellForRow(at: indexPath)
-		CELL_UNHIGHLIGHT(cell: cell!)
-	}
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        let cell = tableView.cellForRow(at: indexPath)
+        CELL_HIGHLIGHT(cell: cell!)
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        CELL_UNHIGHLIGHT(cell: cell!)
+    }
     
     func fakeData(){
         let article1: ArticleListModel = ArticleListModel()
         article1.title = "New Title Here, It's a Long Title, Wrap Please. Wrap Wrap Wrap. More Lines, Maybe three Line. Other Line, Good Title"
         article1.imageList = [IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER]
         article1.authorInfo.authorName = "NewAuthor"
-        article1.articleType = CELL_ARTICLE_LIST_TYPE_C
-        article1.targeted = false
+        article1.articleType = CELL_ARTICLE_LIST_TYPE_A
+        article1.targeted = true
         articleList.append(article1)
-
+        
         let article5: ArticleListModel = ArticleListModel()
         article5.title = "New Title Here"
         article5.imageList = [IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER, IMG_NAME_PLACEHOLDER]
         article5.authorInfo.authorName = "NewAuthor"
-        article5.articleType = CELL_ARTICLE_LIST_TYPE_C
+        article5.articleType = CELL_ARTICLE_LIST_TYPE_A
         article5.targeted = true
         articleList.append(article5)
         
@@ -142,23 +142,24 @@ class ArticleListTableViewController: UITableViewController {
         article2.imageList = [IMG_NAME_PLACEHOLDER]
         article2.authorInfo.authorName = "NewAuthor"
         article2.articleType = CELL_ARTICLE_LIST_TYPE_A
-        article2.targeted = false
+        article2.targeted = true
         articleList.append(article2)
         
         let article4: ArticleListModel = ArticleListModel()
         article4.title = "New Title Here"
         article4.imageList = [IMG_NAME_PLACEHOLDER]
         article4.authorInfo.authorName = "NewAuthor"
-        article4.articleType = CELL_ARTICLE_LIST_TYPE_B
-        article4.targeted = false
+        article4.articleType = CELL_ARTICLE_LIST_TYPE_A
+        article4.targeted = true
         articleList.append(article4)
         
         let article3: ArticleListModel = ArticleListModel()
         article3.title = "New Title Here, It's a Long Title, Wrap Please. Wrap Wrap Wrap. More Lines, Maybe three Line. Other Line, Good Title"
-        article3.targeted = false
+        article3.targeted = true
         article3.imageList = [IMG_NAME_PLACEHOLDER]
         article3.authorInfo.authorName = "NewAuthor"
         article3.articleType = CELL_ARTICLE_LIST_TYPE_A
         articleList.append(article3)
     }
+
 }

@@ -19,13 +19,17 @@
 		069494571EC0BE43002814EC /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069494561EC0BE43002814EC /* ArticleViewController.swift */; };
 		069494591EC0BE60002814EC /* ArticleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069494581EC0BE60002814EC /* ArticleViewController.storyboard */; };
 		0694945B1EC3689C002814EC /* UIView+XIBEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0694945A1EC3689C002814EC /* UIView+XIBEdit.swift */; };
-		06A593481EBA36410048A98D /* WishListMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A593471EBA36410048A98D /* WishListMapViewController.storyboard */; };
 		06D1C2E71EE6BCF300E0D20F /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D1C2E61EE6BCF300E0D20F /* star@3x.png */; };
 		06D1C2E91EE6BDD200E0D20F /* target@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D1C2E81EE6BDD200E0D20F /* target@3x.png */; };
 		06D1C2EB1EE943BD00E0D20F /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D1C2EA1EE943BD00E0D20F /* chat.png */; };
 		06D1C2ED1EEA448100E0D20F /* target-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D1C2EC1EEA448100E0D20F /* target-color.png */; };
 		06D1C2F31EEA48B500E0D20F /* target-o.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D1C2F21EEA48B500E0D20F /* target-o.png */; };
 		06D1C2F51EEBDE2400E0D20F /* article.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D1C2F41EEBDE2400E0D20F /* article.png */; };
+		06DC60731EED473200580F9E /* AddCommentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC60711EED473200580F9E /* AddCommentHeader.swift */; };
+		06DC60741EED473200580F9E /* AddCommentHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06DC60721EED473200580F9E /* AddCommentHeader.xib */; };
+		06DC60761EEE269C00580F9E /* TargetListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC60751EEE269C00580F9E /* TargetListTableViewController.swift */; };
+		06DC60781EEE26DC00580F9E /* TargetNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC60771EEE26DC00580F9E /* TargetNavigationController.swift */; };
+		06DC607A1EEE275100580F9E /* TargetListTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DC60791EEE275100580F9E /* TargetListTableViewController.storyboard */; };
 		06F09B3A1EBB0804002FD77C /* CONST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F09B391EBB0804002FD77C /* CONST.swift */; };
 		06F09B421EBB141C002FD77C /* ArticleListCellAuthorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F09B411EBB141C002FD77C /* ArticleListCellAuthorView.xib */; };
 		06F09B441EBB15D4002FD77C /* ArticleListCellAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F09B431EBB15D4002FD77C /* ArticleListCellAuthorView.swift */; };
@@ -35,7 +39,6 @@
 		06F6EA471EBA2E8700278594 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F6EA451EBA2E8700278594 /* LaunchScreen.storyboard */; };
 		06F6EA531EBA2FDA00278594 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA521EBA2FDA00278594 /* MainTabBarController.swift */; };
 		06F6EA551EBA306A00278594 /* ArticleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA541EBA306A00278594 /* ArticleNavigationController.swift */; };
-		06F6EA571EBA308600278594 /* WishNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA561EBA308600278594 /* WishNavigationController.swift */; };
 		06F6EA5B1EBA30B000278594 /* MineNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA5A1EBA30B000278594 /* MineNavigationController.swift */; };
 		06F6EA5E1EBA30DF00278594 /* ArticleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA5C1EBA30DF00278594 /* ArticleListTableViewController.swift */; };
 		06F6EA641EBA319400278594 /* ArticleTypeATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA621EBA319400278594 /* ArticleTypeATableViewCell.swift */; };
@@ -44,7 +47,6 @@
 		06F6EA691EBA31AA00278594 /* ArticleTypeBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F6EA671EBA31AA00278594 /* ArticleTypeBTableViewCell.xib */; };
 		06F6EA6C1EBA31C500278594 /* ArticleTypeCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA6A1EBA31C500278594 /* ArticleTypeCTableViewCell.swift */; };
 		06F6EA6D1EBA31C500278594 /* ArticleTypeCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F6EA6B1EBA31C500278594 /* ArticleTypeCTableViewCell.xib */; };
-		06F6EA701EBA321D00278594 /* WishListMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA6E1EBA321D00278594 /* WishListMapViewController.swift */; };
 		06F6EA741EBA327900278594 /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F6EA721EBA327900278594 /* MineTableViewController.swift */; };
 		06F6EA771EBA33A700278594 /* ArticleListTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F6EA761EBA33A700278594 /* ArticleListTableViewController.storyboard */; };
 /* End PBXBuildFile section */
@@ -62,13 +64,17 @@
 		069494561EC0BE43002814EC /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		069494581EC0BE60002814EC /* ArticleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArticleViewController.storyboard; sourceTree = "<group>"; };
 		0694945A1EC3689C002814EC /* UIView+XIBEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XIBEdit.swift"; sourceTree = "<group>"; };
-		06A593471EBA36410048A98D /* WishListMapViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WishListMapViewController.storyboard; sourceTree = "<group>"; };
 		06D1C2E61EE6BCF300E0D20F /* star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@3x.png"; sourceTree = "<group>"; };
 		06D1C2E81EE6BDD200E0D20F /* target@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target@3x.png"; sourceTree = "<group>"; };
 		06D1C2EA1EE943BD00E0D20F /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		06D1C2EC1EEA448100E0D20F /* target-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target-color.png"; sourceTree = "<group>"; };
 		06D1C2F21EEA48B500E0D20F /* target-o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target-o.png"; sourceTree = "<group>"; };
 		06D1C2F41EEBDE2400E0D20F /* article.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = article.png; sourceTree = "<group>"; };
+		06DC60711EED473200580F9E /* AddCommentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentHeader.swift; sourceTree = "<group>"; };
+		06DC60721EED473200580F9E /* AddCommentHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCommentHeader.xib; sourceTree = "<group>"; };
+		06DC60751EEE269C00580F9E /* TargetListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetListTableViewController.swift; sourceTree = "<group>"; };
+		06DC60771EEE26DC00580F9E /* TargetNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetNavigationController.swift; sourceTree = "<group>"; };
+		06DC60791EEE275100580F9E /* TargetListTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TargetListTableViewController.storyboard; sourceTree = "<group>"; };
 		06F09B391EBB0804002FD77C /* CONST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CONST.swift; sourceTree = "<group>"; };
 		06F09B411EBB141C002FD77C /* ArticleListCellAuthorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleListCellAuthorView.xib; sourceTree = "<group>"; };
 		06F09B431EBB15D4002FD77C /* ArticleListCellAuthorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListCellAuthorView.swift; sourceTree = "<group>"; };
@@ -80,7 +86,6 @@
 		06F6EA481EBA2E8700278594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F6EA521EBA2FDA00278594 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		06F6EA541EBA306A00278594 /* ArticleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleNavigationController.swift; sourceTree = "<group>"; };
-		06F6EA561EBA308600278594 /* WishNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishNavigationController.swift; sourceTree = "<group>"; };
 		06F6EA5A1EBA30B000278594 /* MineNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineNavigationController.swift; sourceTree = "<group>"; };
 		06F6EA5C1EBA30DF00278594 /* ArticleListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewController.swift; sourceTree = "<group>"; };
 		06F6EA621EBA319400278594 /* ArticleTypeATableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTypeATableViewCell.swift; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		06F6EA671EBA31AA00278594 /* ArticleTypeBTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTypeBTableViewCell.xib; sourceTree = "<group>"; };
 		06F6EA6A1EBA31C500278594 /* ArticleTypeCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTypeCTableViewCell.swift; sourceTree = "<group>"; };
 		06F6EA6B1EBA31C500278594 /* ArticleTypeCTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTypeCTableViewCell.xib; sourceTree = "<group>"; };
-		06F6EA6E1EBA321D00278594 /* WishListMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListMapViewController.swift; sourceTree = "<group>"; };
 		06F6EA721EBA327900278594 /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		06F6EA761EBA33A700278594 /* ArticleListTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ArticleListTableViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,7 +152,7 @@
 				06F6EA401EBA2E8700278594 /* Main.storyboard */,
 				06F6EA761EBA33A700278594 /* ArticleListTableViewController.storyboard */,
 				069494581EC0BE60002814EC /* ArticleViewController.storyboard */,
-				06A593471EBA36410048A98D /* WishListMapViewController.storyboard */,
+				06DC60791EEE275100580F9E /* TargetListTableViewController.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -166,7 +170,7 @@
 			children = (
 				06F6EA5C1EBA30DF00278594 /* ArticleListTableViewController.swift */,
 				069494561EC0BE43002814EC /* ArticleViewController.swift */,
-				06F6EA6E1EBA321D00278594 /* WishListMapViewController.swift */,
+				06DC60751EEE269C00580F9E /* TargetListTableViewController.swift */,
 				06F6EA721EBA327900278594 /* MineTableViewController.swift */,
 			);
 			name = ViewController;
@@ -247,7 +251,7 @@
 			children = (
 				06F6EA521EBA2FDA00278594 /* MainTabBarController.swift */,
 				06F6EA541EBA306A00278594 /* ArticleNavigationController.swift */,
-				06F6EA561EBA308600278594 /* WishNavigationController.swift */,
+				06DC60771EEE26DC00580F9E /* TargetNavigationController.swift */,
 				06F6EA5A1EBA30B000278594 /* MineNavigationController.swift */,
 			);
 			name = Base;
@@ -259,6 +263,7 @@
 				06F6EA631EBA319400278594 /* ArticleTypeATableViewCell.xib */,
 				06F6EA671EBA31AA00278594 /* ArticleTypeBTableViewCell.xib */,
 				06F6EA6B1EBA31C500278594 /* ArticleTypeCTableViewCell.xib */,
+				06DC60721EED473200580F9E /* AddCommentHeader.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 		06F6EA611EBA315900278594 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				06DC60711EED473200580F9E /* AddCommentHeader.swift */,
 				06F6EA621EBA319400278594 /* ArticleTypeATableViewCell.swift */,
 				06F6EA661EBA31AA00278594 /* ArticleTypeBTableViewCell.swift */,
 				06F6EA6A1EBA31C500278594 /* ArticleTypeCTableViewCell.swift */,
@@ -300,12 +306,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = com.kazmastudio;
 				TargetAttributes = {
 					06F6EA381EBA2E8700278594 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 6525DV2M7X;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -338,8 +345,10 @@
 				06D1C2E91EE6BDD200E0D20F /* target@3x.png in Resources */,
 				06F6EA6D1EBA31C500278594 /* ArticleTypeCTableViewCell.xib in Resources */,
 				067BCDD11EC3557D007861A5 /* record.png in Resources */,
+				06DC60741EED473200580F9E /* AddCommentHeader.xib in Resources */,
 				069494591EC0BE60002814EC /* ArticleViewController.storyboard in Resources */,
 				06F6EA471EBA2E8700278594 /* LaunchScreen.storyboard in Resources */,
+				06DC607A1EEE275100580F9E /* TargetListTableViewController.storyboard in Resources */,
 				067BCDCE1EC3556D007861A5 /* avater-default-girl.png in Resources */,
 				06D1C2F51EEBDE2400E0D20F /* article.png in Resources */,
 				06F6EA691EBA31AA00278594 /* ArticleTypeBTableViewCell.xib in Resources */,
@@ -352,7 +361,6 @@
 				067BCDD31EC3558D007861A5 /* placeholder.png in Resources */,
 				06D1C2E71EE6BCF300E0D20F /* star@3x.png in Resources */,
 				06D1C2F31EEA48B500E0D20F /* target-o.png in Resources */,
-				06A593481EBA36410048A98D /* WishListMapViewController.storyboard in Resources */,
 				06F6EA421EBA2E8700278594 /* Main.storyboard in Resources */,
 				06802A581EE5682D007E8AC9 /* share.png in Resources */,
 			);
@@ -365,13 +373,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F6EA701EBA321D00278594 /* WishListMapViewController.swift in Sources */,
 				06802A561EE54D9B007E8AC9 /* Util.swift in Sources */,
 				06F6EA5E1EBA30DF00278594 /* ArticleListTableViewController.swift in Sources */,
 				06F6EA741EBA327900278594 /* MineTableViewController.swift in Sources */,
-				06F6EA571EBA308600278594 /* WishNavigationController.swift in Sources */,
+				06DC60731EED473200580F9E /* AddCommentHeader.swift in Sources */,
 				06F09B441EBB15D4002FD77C /* ArticleListCellAuthorView.swift in Sources */,
 				0694945B1EC3689C002814EC /* UIView+XIBEdit.swift in Sources */,
+				06DC60761EEE269C00580F9E /* TargetListTableViewController.swift in Sources */,
 				06F6EA531EBA2FDA00278594 /* MainTabBarController.swift in Sources */,
 				0684D87E1EC03971000E204E /* ArticleListModel.swift in Sources */,
 				06F6EA3D1EBA2E8700278594 /* AppDelegate.swift in Sources */,
@@ -380,6 +388,7 @@
 				06F6EA681EBA31AA00278594 /* ArticleTypeBTableViewCell.swift in Sources */,
 				06F6EA641EBA319400278594 /* ArticleTypeATableViewCell.swift in Sources */,
 				0684D8801EC03D13000E204E /* AuthorInfoModel.swift in Sources */,
+				06DC60781EEE26DC00580F9E /* TargetNavigationController.swift in Sources */,
 				06F09B3A1EBB0804002FD77C /* CONST.swift in Sources */,
 				06F6EA6C1EBA31C500278594 /* ArticleTypeCTableViewCell.swift in Sources */,
 				06F6EA5B1EBA30B000278594 /* MineNavigationController.swift in Sources */,
@@ -418,7 +427,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -426,7 +437,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -469,7 +484,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -477,7 +494,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -512,6 +533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kazmastudio.Feeding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -525,6 +547,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kazmastudio.Feeding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -224,7 +224,7 @@
                                                 <constraint firstAttribute="width" constant="44" id="4TT-nx-a8d"/>
                                             </constraints>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <inset key="imageEdgeInsets" minX="10" minY="16" maxX="10" maxY="14"/>
+                                            <inset key="imageEdgeInsets" minX="10" minY="14" maxX="10" maxY="14"/>
                                             <state key="normal" image="share.png"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egl-yT-yP7">
@@ -348,6 +348,7 @@
                         <outlet property="layoutConstraintVisualEffectViewBottomBottom" destination="kzt-ua-pm9" id="2TV-x9-ZoC"/>
                         <outlet property="layoutConstraintVisualViewBottomHeight" destination="bdM-O5-Ri7" id="bUW-06-gEK"/>
                         <outlet property="progressWebView" destination="ddL-6D-kyv" id="qcY-mN-dcW"/>
+                        <outlet property="tableViewComment" destination="eLi-33-J6i" id="uGH-xd-FpT"/>
                         <outlet property="viewAuthor" destination="JXC-sQ-hTc" id="cb0-3s-31z"/>
                         <outlet property="viewButtonBar" destination="HYm-gO-1Mf" id="wb6-me-9Q3"/>
                         <outlet property="viewCover" destination="ilH-jP-tza" id="aUR-lq-2qH"/>

@@ -45,7 +45,7 @@
         <!--Target-->
         <scene sceneID="Gro-TQ-5ec">
             <objects>
-                <navigationController id="Nfk-i5-AB0" customClass="WishNavigationController" customModule="Feeding" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Nfk-i5-AB0" customClass="TargetNavigationController" customModule="Feeding" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Target" image="target.png" id="PPR-VL-BFA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tk3-2L-SVn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
